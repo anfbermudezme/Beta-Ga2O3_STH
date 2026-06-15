@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the associated manuscript/preprint and this software repository."
+title: "Ga₂O₃ defect dichroism"
+type: software
+authors:
+  - family-names: "Bermudez Mendoza"
+    given-names: "Felipe"
+year: 2026
+license: MIT
+repository-code: "https://github.com/anfbermudezme/ga2o3-defect-dichroism"
+url: "https://www.researchsquare.com/article/rs-9008105/v1"
+abstract: >-
+  Readable Python tools and CRYSTAL23 input helpers for reproducing workflows
+  associated with a β-Ga₂O₃ vacancy-bound self-trapped-hole and optical
+  dichroism study.

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300">
+  <rect width="1000" height="300" fill="#0f172a"/>
+  <circle cx="160" cy="150" r="52" fill="#94a3b8"/>
+  <circle cx="260" cy="90" r="32" fill="#38bdf8"/>
+  <circle cx="260" cy="210" r="32" fill="#38bdf8"/>
+  <circle cx="360" cy="150" r="52" fill="#94a3b8"/>
+  <text x="440" y="150" fill="#f8fafc" font-family="Arial" font-size="48" font-weight="700">Ga₂O₃ defect dichroism</text>
+  <text x="440" y="200" fill="#cbd5e1" font-family="Arial" font-size="24">CRYSTAL23 · small polarons · CPHF/CPKS</text>
+</svg>
