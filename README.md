@@ -2,7 +2,7 @@
 
 <p>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-  <img alt="Version: 0.1.0" src="https://img.shields.io/badge/version-0.1.0-success.svg">
+  <img alt="Version: 0.1.1" src="https://img.shields.io/badge/version-0.1.1-success.svg">
   <a href="https://www.researchsquare.com/article/rs-9008105/v1"><img alt="Manuscript status: under review" src="https://img.shields.io/badge/manuscript-under%20review-orange.svg"></a>
   <a href="https://github.com/anfbermudezme/ga2o3-defect-dichroism"><img alt="Reproducible CRYSTAL23 workflow" src="https://img.shields.io/badge/CRYSTAL23-input%20generator-6f42c1.svg"></a>
 </p>
@@ -178,7 +178,7 @@ The generator will automatically create the SCF `.d12`, CPHF/CPKS `.d12`, post-S
 
 ## Versioning
 
-This project uses [`bump-my-version`](https://callowayproject.github.io/bump-my-version/) for release version updates. The current package version is **0.1.0**.
+This project uses [`bump-my-version`](https://callowayproject.github.io/bump-my-version/) for release version updates. The current package version is **0.1.1**.
 
 Show the active version and possible bump targets:
 
@@ -190,9 +190,9 @@ bump-my-version show-bump
 Create a release bump from a clean Git working tree:
 
 ```bash
-bump-my-version bump patch   # 0.1.0 -> next patch release
-bump-my-version bump minor   # 0.1.0 -> next minor release
-bump-my-version bump major   # 0.1.0 -> next major release
+bump-my-version bump patch   # 0.1.1 -> next patch release
+bump-my-version bump minor   # 0.1.1 -> next minor release
+bump-my-version bump major   # 0.1.1 -> next major release
 ```
 
 The configured bump updates the synchronized version strings in `pyproject.toml`, `src/ga2o3dichroism/__init__.py`, `README.md`, `CITATION.cff`, `NOTICE`, `VERSIONING.md`, and `package-summary.json`, then creates a release commit and a `v<version>` Git tag.

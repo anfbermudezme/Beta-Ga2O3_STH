@@ -2,7 +2,7 @@
 
 This repository uses [`bump-my-version`](https://callowayproject.github.io/bump-my-version/) to keep release identifiers synchronized across the Python package, documentation, citation metadata, and project summary.
 
-Current release: **0.1.0**
+Current release: **0.1.1**
 
 ## Install release tooling
 

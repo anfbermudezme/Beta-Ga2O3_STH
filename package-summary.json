@@ -1,6 +1,6 @@
 {
   "name": "ga2o3-defect-dichroism",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "legacy_code_included": false,
   "main_cli": "ga2o3d generate",
   "input_generation": {

@@ -6,7 +6,7 @@ authors:
   - family-names: "Bermudez Mendoza"
     given-names: "Felipe"
 year: 2026
-version: "0.1.0"
+version: "0.1.1"
 license: MIT
 repository-code: "https://github.com/anfbermudezme/ga2o3-defect-dichroism"
 url: "https://www.researchsquare.com/article/rs-9008105/v1"
