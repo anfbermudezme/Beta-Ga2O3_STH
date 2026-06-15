@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ga2o3-defect-dichroism"
-version = "0.2.1"
+version = "0.1.0"
 description = "Readable CRYSTAL23 and Python helpers for beta-Ga2O3 defect dichroism reproducibility."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -16,10 +16,11 @@ dependencies = [
   "matplotlib>=3.7",
   "numpy>=1.24",
   "pandas>=2.0",
+  "PyYAML>=6.0",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
+dev = ["pytest>=8.0", "bump-my-version>=1.3.0,<2"]
 
 [project.scripts]
 ga2o3d = "ga2o3dichroism.cli:main"
@@ -34,3 +35,58 @@ pythonpath = ["src"]
 [project.urls]
 Repository = "https://github.com/anfbermudezme/ga2o3-defect-dichroism"
 Preprint = "https://www.researchsquare.com/article/rs-9008105/v1"
+
+[tool.bumpversion]
+current_version = "0.1.0"
+parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
+serialize = ["{major}.{minor}.{patch}"]
+search = "{current_version}"
+replace = "{new_version}"
+regex = false
+ignore_missing_version = false
+ignore_missing_files = false
+allow_dirty = false
+commit = true
+message = "chore(release): bump version {current_version} → {new_version}"
+tag = true
+tag_name = "v{new_version}"
+tag_message = "Release v{new_version}"
+sign_tags = false
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+regex = true
+search = "^version = \"{current_version}\"$"
+replace = "version = \"{new_version}\""
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+regex = true
+search = "^current_version = \"{current_version}\"$"
+replace = "current_version = \"{new_version}\""
+
+[[tool.bumpversion.files]]
+filename = "src/ga2o3dichroism/__init__.py"
+search = "__version__ = \"{current_version}\""
+replace = "__version__ = \"{new_version}\""
+
+[[tool.bumpversion.files]]
+filename = "README.md"
+
+[[tool.bumpversion.files]]
+filename = "CITATION.cff"
+search = "version: \"{current_version}\""
+replace = "version: \"{new_version}\""
+
+[[tool.bumpversion.files]]
+filename = "NOTICE"
+search = "Software package version: {current_version}"
+replace = "Software package version: {new_version}"
+
+[[tool.bumpversion.files]]
+filename = "VERSIONING.md"
+
+[[tool.bumpversion.files]]
+filename = "package-summary.json"
+search = "\"version\": \"{current_version}\""
+replace = "\"version\": \"{new_version}\""

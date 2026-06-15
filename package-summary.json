@@ -1,0 +1,53 @@
+{
+  "name": "ga2o3-defect-dichroism",
+  "version": "0.1.0",
+  "legacy_code_included": false,
+  "main_cli": "ga2o3d generate",
+  "input_generation": {
+    "scf_d12": true,
+    "cphf_cpks_d12": true,
+    "properties_d3": [
+      "BANDS",
+      "DOSS",
+      "ANBD",
+      "ECHG",
+      "ECH3",
+      "PPAN"
+    ],
+    "workflow_file": "examples/workflows/publication.yml",
+    "manifest": "manifest.csv"
+  },
+  "bundled_d12_inputs": [
+    "Ga2O3_VAC_TETRA_2x2x2.d12",
+    "Ga2O3_VAC_OCTA_2x2x2.d12",
+    "Ga2O3_1x2x2_TETRA_VAC_SCF.d12",
+    "Ga2O3_1x2x2_OCTA_VAC_SCF.d12",
+    "Ga2O3_1x2x2_TETRA_VACS_SCF.d12",
+    "Ga2O3_1x2x2_OCTA_OCTA_VACS_SCF.d12",
+    "Ga2O3_1x2x2_OCTA_TETRA_VACS_SCF.d12",
+    "Ga2O3_Ovac_1_SCF.d12",
+    "Ga2O3_Ovac_2_SCF_SPIN.d12",
+    "Ga2O3_Ovac_3_SCF.d12"
+  ],
+  "cli": "ga2o3d",
+  "license": "MIT",
+  "manuscript_status": "under review",
+  "preprint_url": "https://www.researchsquare.com/article/rs-9008105/v1",
+  "notes": "Clean library release with declarative CRYSTAL23 input generation, standard MIT LICENSE, NOTICE, CITATION.cff, README status badges, and bump-my-version release versioning.",
+  "versioning": {
+    "tool": "bump-my-version",
+    "config": "pyproject.toml [tool.bumpversion]",
+    "synchronized_files": [
+      "pyproject.toml",
+      "src/ga2o3dichroism/__init__.py",
+      "README.md",
+      "CITATION.cff",
+      "NOTICE",
+      "VERSIONING.md",
+      "package-summary.json"
+    ],
+    "commit": true,
+    "tag": true,
+    "tag_format": "v{version}"
+  }
+}

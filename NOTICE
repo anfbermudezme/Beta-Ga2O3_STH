@@ -1,6 +1,8 @@
 Ga₂O₃ defect dichroism
 Copyright (c) 2026 Felipe Bermudez Mendoza
 
+Software package version: 0.1.0
+
 This repository contains software utilities and example CRYSTAL23 input decks
 for preparing and analyzing calculations associated with a β-Ga₂O₃ vacancy,
 self-trapped-hole, and optical-dichroism study.

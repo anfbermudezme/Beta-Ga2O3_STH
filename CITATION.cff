@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+cff-version: 0.1.0
 message: "If you use this repository, please cite the associated manuscript/preprint and this software repository."
 title: "Ga₂O₃ defect dichroism"
 type: software
@@ -6,6 +6,7 @@ authors:
   - family-names: "Bermudez Mendoza"
     given-names: "Felipe"
 year: 2026
+version: "0.1.0"
 license: MIT
 repository-code: "https://github.com/anfbermudezme/ga2o3-defect-dichroism"
 url: "https://www.researchsquare.com/article/rs-9008105/v1"
