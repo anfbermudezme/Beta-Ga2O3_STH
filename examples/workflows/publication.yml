@@ -1,0 +1,72 @@
+# Reproducible CRYSTAL23 input-generation workflow for the Ga2O3 defect-dichroism study.
+defaults:
+  properties:
+    - bands
+    - doss
+    - anbd
+    - echg
+    - ech3
+    - ppan
+
+cases:
+  - name: GaO_TETRA_VAC
+    source: Ga2O3_VAC_TETRA_2x2x2.d12
+    label: 2x2x2 neutral tetrahedral Ga vacancy
+    cphf:
+      - mode: static
+        name: CPHF_GaO_TETRA_VAC_STATIC
+        label: static dielectric response
+      - mode: dynamic
+        name: CPHF_GaO_TETRA_VAC_7500_12500
+        start_nm: 7500
+        stop_nm: 12500
+        steps: 10
+        damping: 0.002
+        label: dynamic response sampled from 7500 to 12500 nm
+
+  - name: GaO_OCTA_VAC
+    source: Ga2O3_VAC_OCTA_2x2x2.d12
+    label: 2x2x2 neutral octahedral Ga vacancy
+    cphf:
+      - mode: static
+        name: CPHF_GaO_OCTA_VAC_STATIC
+        label: static dielectric response
+      - mode: dynamic
+        name: CPHF_GaO_OCTA_VAC_7500_12500
+        start_nm: 7500
+        stop_nm: 12500
+        steps: 10
+        damping: 0.002
+        label: dynamic response sampled from 7500 to 12500 nm
+
+  - name: GaO_1x2x2_TETRA_VAC
+    source: Ga2O3_1x2x2_TETRA_VAC_SCF.d12
+    label: 1x2x2 tetrahedral Ga vacancy
+
+  - name: GaO_1x2x2_OCTA_VAC
+    source: Ga2O3_1x2x2_OCTA_VAC_SCF.d12
+    label: 1x2x2 octahedral Ga vacancy
+
+  - name: GaO_1x2x2_TETRA_VACS
+    source: Ga2O3_1x2x2_TETRA_VACS_SCF.d12
+    label: 1x2x2 paired tetrahedral Ga vacancies
+
+  - name: GaO_1x2x2_OCTA_OCTA_VACS
+    source: Ga2O3_1x2x2_OCTA_OCTA_VACS_SCF.d12
+    label: 1x2x2 paired octahedral Ga vacancies
+
+  - name: GaO_1x2x2_OCTA_TETRA_VACS
+    source: Ga2O3_1x2x2_OCTA_TETRA_VACS_SCF.d12
+    label: 1x2x2 mixed octahedral/tetrahedral Ga vacancies
+
+  - name: GaO_OVAC_1
+    source: Ga2O3_Ovac_1_SCF.d12
+    label: oxygen vacancy site 1
+
+  - name: GaO_OVAC_2
+    source: Ga2O3_Ovac_2_SCF_SPIN.d12
+    label: oxygen vacancy site 2
+
+  - name: GaO_OVAC_3
+    source: Ga2O3_Ovac_3_SCF.d12
+    label: oxygen vacancy site 3

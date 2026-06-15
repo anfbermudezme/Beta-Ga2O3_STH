@@ -6,6 +6,7 @@ import argparse
 from pathlib import Path
 
 from ga2o3dichroism.crystal import CphfSettings, insert_cphf_block, property_input
+from ga2o3dichroism.generate import generate_crystal_inputs, load_workflow, publication_cases
 from ga2o3dichroism.parsers import parse_cphf_folder, read_band, read_doss
 from ga2o3dichroism.plotting import plot_bands, plot_dos, plot_mulliken_summary
 from ga2o3dichroism.workflow import default_cases, stage_crystal_workflow
@@ -16,6 +17,12 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="ga2o3d", description="Ga2O3 defect dichroism helper CLI")
     sub = parser.add_subparsers(dest="cmd", required=True)
     sub.add_parser("cases")
+
+    generate = sub.add_parser("generate", help="Generate a complete CRYSTAL23 input tree")
+    generate.add_argument("--input-dir", type=Path, default=Path("examples/crystal23/scf"))
+    generate.add_argument("--out", type=Path, default=Path("runs"))
+    generate.add_argument("--cores", type=int, default=128)
+    generate.add_argument("--workflow", type=Path, help="Optional YAML/JSON workflow file")
 
     stage = sub.add_parser("stage")
     stage.add_argument("--input-dir", type=Path, default=Path("examples/crystal23/scf"))
@@ -61,6 +68,13 @@ def main(argv: list[str] | None = None) -> int:
     if args.cmd == "cases":
         for case in default_cases():
             print(f"{case.name:32s} {case.source_file:42s} {case.label}")
+        return 0
+    if args.cmd == "generate":
+        cases = load_workflow(args.workflow) if args.workflow else publication_cases()
+        result = generate_crystal_inputs(input_dir=args.input_dir, out_dir=args.out, cores=args.cores, cases=cases)
+        print(result.root)
+        print(f"generated_files={len(result.files)}")
+        print(f"manifest={result.manifest}")
         return 0
     if args.cmd == "stage":
         print(stage_crystal_workflow(input_dir=args.input_dir, out_dir=args.out, cores=args.cores))
